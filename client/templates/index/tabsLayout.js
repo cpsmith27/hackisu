@@ -3,8 +3,7 @@ Template.tabsLayout.rendered = function () {
 };
 
 Template.tabsThree.helpers({
-  updateRes: function(){
-    return Session.get("enemy");
-
+  getNames: function(){
+    return Session.get("places");
   }
 });
