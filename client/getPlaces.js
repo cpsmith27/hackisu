@@ -54,10 +54,7 @@ if (Meteor.isClient) {
             }
         },
 
-        updateRes: function(){
-            return Session.get("enemy");
 
-        }
     });
 
     GoogleMaps.ready('map', function(map) {
