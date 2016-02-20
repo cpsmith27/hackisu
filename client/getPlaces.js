@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                Session.set("enemy",  JSON.stringify(getPlaces(results)));
+                Session.set("places",  JSON.stringify(results));
             }
         }
 
@@ -90,72 +90,11 @@ if (Meteor.isClient) {
         GoogleMaps.ready('map', function(map) {
             var userLocation = Geolocation.latLng();
             var marker = new google.maps.Marker({
-                position: map.options.center,
+                position: new google.maps.LatLng(userLocation.lat, userLocation.lng),
                 map: map.instance
             });
-
-            var m = new google.maps.Map(document.getElementById('gmap'), {
-                center: userLocation,
-                zoom: 15
-            });
-
-            var service = new google.maps.places.PlacesService(m);
-            var infowindow = new google.maps.InfoWindow();
-            service.nearbySearch({
-                location: userLocation,
-                radius: 5000,
-                types: ['restaurant']
-            }, callback);
-
-            function callback(results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    //return console.log(JSON.stringify(getPlaces(results)));
-                }
-            }
-
-            function getPlaces(results){
-                var names = [];
-                for(i = 0; i < results.length; i++){
-                    names.push(results[i].name);
-                }
-
-                return names;
-            }
-
-            function createMarker(place) {
-                var placeLoc = place.geometry.location;
-                var marker = new google.maps.Marker({
-                    position: map.options.center,
-                    map: map.instance
-                });
-            }
-
         });
     });
-
-    //Template.resNames.helpers({
-    //    getPlacesInfo: function() {
-    //        if(GoogleMaps.loaded()){
-    //            var m = new google.maps.Map(document.getElementById('gmap'), {
-    //                center: userLocation,
-    //                zoom: 15
-    //            });
-    //
-    //            var service = new google.maps.places.PlacesService(m);
-    //            service.nearbySearch({
-    //                location: userLocation,
-    //                radius: 5000,
-    //                types: ['restaurant']
-    //            }, callback);
-    //
-    //            function callback(results, status) {
-    //                if (status === google.maps.places.PlacesServiceStatus.OK) {
-    //                    return JSON.stringify(getPlaces(results));
-    //                }
-    //            }
-    //        }
-    //    }
-    //});
 }
 
 if (Meteor.isServer) {
