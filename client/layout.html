@@ -1,18 +1,54 @@
 <template name="layout">
     {{#ionBody}}
-        {{#ionSideMenuContainer side="right"}}
-            {{#ionSideMenu side="right"}}
-                <div class="bar bar-header bar-dark">
-                    <h1 class="title">Right Menu</h1>
+        {{#ionSideMenuContainer side="right" style="custom-side-icons"}}
+            {{#ionSideMenu side="right" style="custom-side-icons"}}
+
+                <section id = "menu">
+                <div class="bar bar-header custom-side-icons" >
+                    <h1 class="title branding">Setting</h1>
                 </div>
-                <div class="content has-header">
-                    <div class="list">
-                        <div class="item item-icon-left" data-ion-menu-close>
-                            {{> ionIcon icon="ios-arrow-left"}} Close Me
+                <div class="content has-header custom-side-icons">
+                        <div class="list">
+
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Category
+                                </div>
+                                <select class="">
+                                    <option>Fast Food</option>
+                                    <option selected>Fast Casual</option>
+                                    <option>Casual Dining</option>
+                                    <option>Fine Dining</option>
+                                </select>
+                            </label>
+
+                            <div class="item range range-positive">
+                                <i class="icon ion-social-usd-outline"></i>
+                                <input type="range" name="volume" min="0" max="100" value="50">
+                                <i class="icon ion-social-usd"></i>
+                            </div>
+
+                            <div class="item range range-calm">
+                                <i class="icon ion-ios-navigate-outline"></i>
+                                <input type="range" name="volume" min="0" max="100" value="33">
+                                <i class="icon ion-ios-navigate"></i>
+                            </div>
+
+                            <div class="item range range-balanced">
+                                <i class="icon ion-ios-star-outline"></i>
+                                <input type="range" name="volume" min="0" max="100" value="33">
+                                <i class="icon ion-ios-star"></i>
+                            </div>
                         </div>
+                </div>
+                <div class="bar bar-footer custom-side-icons">
+                    <div class="title branding" data-ion-menu-close>
+                        {{> ionIcon icon="ios-arrow-left" }} Close
                     </div>
                 </div>
+                </section>
             {{/ionSideMenu}}
+
             {{#ionSideMenuContent}}
 
                 {{#ionNavView}}
