@@ -17,7 +17,7 @@ if (Meteor.isClient) {
 
                 var service = new google.maps.places.PlacesService(m).nearbySearch({
                     location: userLocation,
-                    radius: 5000,
+                    radius: document.getElementById('radius'),
                     types: ['restaurant']
                 }, callback);
 
@@ -66,7 +66,7 @@ if (Meteor.isClient) {
 
         var service = new google.maps.places.PlacesService(m).nearbySearch({
             location: userLocation,
-            radius: 5000,
+            radius: document.getElementById(''),
             types: ['restaurant']
         }, callback);
 
