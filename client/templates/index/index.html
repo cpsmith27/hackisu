@@ -1,17 +1,15 @@
 <template name="index">
-  {{#ionView}}
-    {{#ionHeaderBar class="bar-positive"}}
-    <h1 class="title">Kamport</h1>
+  {{#ionView class="front-page"}}
+    {{#ionHeaderBar class="bar-clear"}}
+      <span class="title branding">Kamport</span>
+      <button class="button button-clear pull-right" data-ion-menu-toggle="right">
+          {{> ionIcon icon='navicon'}}
+      </button>
     {{/ionHeaderBar}}
 
-    {{#ionContent class="padding"}}
-      <div class="padding">
-        <button class="button button-large button-stable" data-action="showBackdrop">
-          Show Backdrop (1s)
-        </button>
-      </div>
+    {{#ionContent class="content"}}
+      <span>I feel like eating...</span>
+      <button class="button button-clear">Wherever</button>
     {{/ionContent}}
-
-    {{> _tabs}}
   {{/ionView}}
 </template>
