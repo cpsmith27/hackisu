@@ -2,15 +2,15 @@
   {{#if isAndroid}}
     {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
       {{> ionTab title="Home" path="index" icon="android-home"}}
-      {{> ionTab title="Restaurants" path="tabs.three" icon="android-restaurant"}}
-      {{> ionTab title="Favourite" path="tabs.two" icon="android-star"}}
+      {{> ionTab title="Restaurants" path="tabs.two" icon="android-restaurant"}}
+      {{> ionTab title="Favourite" path="tabs.three" icon="android-star"}}
       {{> ionTab title="Setting" path="tabs.four" icon="gear-b"}}
     {{/ionTabs}}
   {{else}}
     {{#ionTabs style="ios"}}
       {{> ionTab title="Home" path="index" iconOff="ios-home-outline" iconOn="ios-home"}}
-      {{> ionTab title="Restaurants" path="tabs.three" iconOff="android-restaurant" iconOn="android-restaurant"}}
-      {{> ionTab title="Favourite" path="tabs.two" iconOff="ios-star-outline" iconOn="ios-star"}}
+      {{> ionTab title="Restaurants" path="tabs.two" iconOff="android-restaurant" iconOn="android-restaurant"}}
+      {{> ionTab title="Favourite" path="tabs.three" iconOff="ios-star-outline" iconOn="ios-star"}}
       {{> ionTab title="Setting" path="tabs.four" iconOff="ios-gear-outline" iconOn="ios-gear"}}
     {{/ionTabs}}
   {{/if}}
