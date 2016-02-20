@@ -1,13 +1,12 @@
 <template name="map">
-    <div class="map-container">
+    <div class="map-container" style="z-index: -1">
         {{#unless geolocationError}}
         {{> googleMap name="map" options=mapOptions}}
         {{else}}
         Geolocation failed: {{geolocationError}}
         {{/unless}}
     </div>
-    <div class="resNames" >
-
+    <div class="resNames" style="position:relative">
         {{updateRes}}
     </div>
 </template>

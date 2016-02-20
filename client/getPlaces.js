@@ -54,10 +54,7 @@ if (Meteor.isClient) {
             }
         },
 
-        updateRes: function(){
-            return Session.get("ResNames");
 
-        }
     });
 
     GoogleMaps.ready('map', function(map) {
@@ -75,7 +72,7 @@ if (Meteor.isClient) {
 
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                Session.set("ResNames",  JSON.stringify(getPlaces(results)));
+                Session.set("enemy",  JSON.stringify(getPlaces(results)));
             }
         }
 
