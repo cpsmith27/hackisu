@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                Session.set("places",  JSON.stringify(results));
+                Session.set("places",  results);
             }
         }
 
