@@ -41,3 +41,9 @@ Template.generating.onRendered(function() {
     for (i = 0; i < randoms.length; i++)
         changeWord(randoms[i]);
 });
+
+Template.restaurant.helpers({
+    getNames: function(){
+        return Session.get("places");
+    }
+});
