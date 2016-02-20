@@ -1,32 +1,24 @@
-<template name="home">
-    {{#ionView class="front-page"}}
-    {{#ionHeaderBar class="bar-clear"}}
-    <span class="title branding">Kamport</span>
-    <button class="button button-clear pull-right" data-ion-menu-toggle="right">
-        {{> ionIcon icon='navicon'}}
-    </button>
-    {{/ionHeaderBar}}
+<template name="restaurant">
 
-    {{#ionContent class="content"}}
-    <div id="main-page-content">
-        <div class="list card">
+    {{#ionView}}
+    <div class="list card">
 
-            <div class="item item-avatar">
-                <img src="avatar.jpg">
-                <h2>Pretty Hate Machine</h2>
-                <p>Nine Inch Nails</p>
-            </div>
-
-            <div class="item item-image">
-                <img src="cover.jpg">
-            </div>
-
-            <a class="item item-icon-left assertive" href="#">
-                <i class="icon ion-music-note"></i>
-                Start listening
-            </a>
+        <div class="item item-avatar">
+            <img src="http://www.petzoned.com/assets/default_avatar-468e8f42276a2fd234b034f28536570b.png">
+            <h2>Pretty Hate Machine</h2>
+            <p>Nine Inch Nails</p>
         </div>
+
+        <div class="item item-image">
+            <img src="http://www.hdwallpapersnew.net/wp-content/uploads/2016/01/restaurant-hd-wallpaper-for-desktop-background-download-restaurant-photos.jpg">
+        </div>
+
+        <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-music-note"></i>
+            Start listening
+        </a>
     </div>
-    {{/ionContent}}
+
     {{/ionView}}
+
 </template>

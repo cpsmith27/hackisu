@@ -14,8 +14,7 @@ Template.home.onRendered(function() {
                 Blaze.remove(loadingView);
             });
 
-            // stuff like loading maps here
-
+            Blaze.render(Template.restaurant, content[0]);
         }, 1000);
     });
 });
