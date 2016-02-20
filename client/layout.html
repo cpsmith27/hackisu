@@ -4,23 +4,17 @@
             {{#ionSideMenu side="right" style="custom-side-icons"}}
 
                 <section id = "menu">
-                <div class="bar bar-header custom-side-icons" >
+                <div class="bar bar-header" >
                     <h1 class="title branding">Setting</h1>
                 </div>
-                <div class="content has-header custom-side-icons">
+                <div class="content has-header ">
                         <div class="list">
 
-                            <label class="item item-input item-select">
-                                <div class="input-label">
-                                    Category
-                                </div>
-                                <select class="">
-                                    <option>Fast Food</option>
-                                    <option selected>Fast Casual</option>
-                                    <option>Casual Dining</option>
-                                    <option>Fine Dining</option>
-                                </select>
-                            </label>
+                            <div class="item range range-positive">
+                                <i class="icon ion-social-usd-outline"></i>
+                                <input type="range" name="volume" min="0" max="100" value="50">
+                                <i class="icon ion-social-usd"></i>
+                            </div>
 
                             <div class="item range range-positive">
                                 <i class="icon ion-social-usd-outline"></i>
@@ -41,7 +35,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="bar bar-footer custom-side-icons">
+                <div class="bar bar-footer">
                     <div class="title branding" data-ion-menu-close>
                         {{> ionIcon icon="ios-arrow-left" }} Close
                     </div>
