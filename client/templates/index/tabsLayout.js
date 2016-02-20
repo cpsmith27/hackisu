@@ -4,6 +4,7 @@ Template.tabsLayout.rendered = function () {
 
 Template.tabsThree.helpers({
   getNames: function(){
-    return Session.get("places");
+
+    return Session.get("places")[0].name;
   }
 });
