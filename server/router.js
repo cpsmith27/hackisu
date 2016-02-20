@@ -16,9 +16,4 @@ Meteor.startup(function () {
 
 Router.map(function() {
     this.route('home', {path: '/'});
-    this.route('tabs.one', {path: '/tabs/one', layoutTemplate: 'tabsLayout'});
-    this.route('tabs.two', {path: '/tabs/two', layoutTemplate: 'tabsLayout'});
-    this.route('tabs.three', {path: '/tabs/three', layoutTemplate: 'tabsLayout'});
-    this.route('tabs.four', {path: '/tabs/four', layoutTemplate: 'tabsLayout'});
-    this.route('map_layout', {path: '/map', layoutTemplate: 'tabsLayout'});
 });

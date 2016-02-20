@@ -1,0 +1,16 @@
+<template name="_myModal">
+  {{#ionModal title="Restaurant"}}
+    <div class="padding">
+      <div id="map">
+        <div id="gmap" style="height: 150px; width: 20%"> {{> map }} </div>
+
+        <div class="resNames" style="position:relative">
+          {{getNames}}
+        </div>
+
+        <div img=""></div>
+
+      </div>
+    </div>
+  {{/ionModal}}
+</template>

@@ -1,0 +1,88 @@
+<template name="layout">
+    {{#ionBody}}
+        {{#ionSideMenuContainer side="right" style="custom-side-icons"}}
+            {{#ionSideMenu side="right" style="custom-side-icons"}}
+
+                <section id = "menu">
+                <div class="bar bar-header" >
+                    <h1 class="title branding">Setting</h1>
+                </div>
+                <div class="content has-header ">
+                        <div class="list">
+                            <li class="item item-toggle">
+                                Casual
+                                <label class="toggle toggle-assertive">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <li class="item item-toggle">
+                                Fine Dining
+                                <label class="toggle toggle-calm">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <li class="item item-toggle">
+                                Fast Food
+                                <label class="toggle toggle-royal">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <li class="item item-toggle">
+                                Special
+                                <label class="toggle toggle-positive">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <div class="item range range-positive">
+                                <i class="icon ion-social-usd-outline"></i>
+                                <input type="range" name="volume" min="0" max="3" value="1">
+                                <i class="icon ion-social-usd"></i>
+                            </div>
+
+                            <div class="item range range-calm">
+                                <i class="icon ion-ios-navigate-outline"></i>
+                                <input type="range" name="volume" min="0" max="3" value="1">
+                                <i class="icon ion-ios-navigate"></i>
+                            </div>
+
+                            <div class="item range range-balanced">
+                                <i class="icon ion-ios-star-outline"></i>
+                                <input type="range" name="volume" min="0" max="4" value="2">
+                                <i class="icon ion-ios-star"></i>
+                            </div>
+                        </div>
+                </div>
+                <div class="bar bar-footer">
+                    <div class="title branding" data-ion-menu-close>
+                        {{> ionIcon icon="ios-arrow-left" }} Close
+                    </div>
+                </div>
+                </section>
+            {{/ionSideMenu}}
+
+            {{#ionSideMenuContent}}
+
+                {{#ionNavView}}
+                    {{> yield}}
+                {{/ionNavView}}
+
+            {{/ionSideMenuContent}}
+        {{/ionSideMenuContainer}}
+    {{/ionBody}}
+</template>
