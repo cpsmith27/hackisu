@@ -70,8 +70,8 @@ if (Meteor.isClient) {
             function createMarker(place) {
                 var placeLoc = place.geometry.location;
                 var marker = new google.maps.Marker({
-                    map: map,
-                    position: place.geometry.location
+                    position: map.options.center,
+                    map: map.instance
                 });
             }
 
