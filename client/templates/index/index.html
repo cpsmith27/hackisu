@@ -1,9 +1,15 @@
 <template name="index">
   {{#ionView}}
-    {{> _tabsHeader}}
+    {{#ionHeaderBar class="bar-positive"}}
+    <h1 class="title">Kamport</h1>
+    {{/ionHeaderBar}}
 
     {{#ionContent class="padding"}}
-      <h1>Home</h1>
+      <div class="padding">
+        <button class="button button-large button-stable" data-action="showBackdrop">
+          Show Backdrop (1s)
+        </button>
+      </div>
     {{/ionContent}}
 
     {{> _tabs}}

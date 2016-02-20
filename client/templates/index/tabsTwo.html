@@ -2,7 +2,26 @@
   {{> _tabsHeader}}
 
   {{#ionContent class="padding"}}
-  <h1>Tab 2</h1>
+    {{#ionList card=true}}
+      {{#ionItem avatar=true}}
+        <img src="https://randomuser.me/api/portraits/thumb/men/27.jpg">
+        <h2>John Smith</h2>
+        <p>
+          (555) 555-1212
+        </p>
+      {{/ionItem}}
+
+      {{#ionItem image=true}}
+        <img src="http://www.hdwallpapersnew.net/wp-content/uploads/2016/01/restaurant-hd-wallpaper-for-desktop-background-download-restaurant-photos.jpg" width="auto" height="350px">
+      {{/ionItem}}
+
+      <a href="#" data-ion-modal="_myModal" class="button-assertive">
+        {{#ionItem image=true iconLeft=true class="assertive"}}
+          <i class="icon ion-fork"></i>   <i class="icon ion-knife padding"></i>
+          Eat!
+        {{/ionItem}}
+      </a>
+    {{/ionList}}
   {{/ionContent}}
 
   {{> _tabs}}
