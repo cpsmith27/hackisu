@@ -32,7 +32,16 @@ if(Meteor.isClient) {
         var randoms = this.$(".randoms");
         for (i = 0; i < randoms.length; i++)
             changeWord(randoms[i]);
+
+
     });
+
+    setTimeout(function() {
+        $(".randoms").each(function(e){
+            e.stop();
+        });
+    }, 1000);
+
 }
 
 

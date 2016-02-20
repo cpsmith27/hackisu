@@ -4,23 +4,50 @@
             {{#ionSideMenu side="right" style="custom-side-icons"}}
 
                 <section id = "menu">
-                <div class="bar bar-header custom-side-icons" >
+                <div class="bar bar-header" >
                     <h1 class="title branding">Setting</h1>
                 </div>
-                <div class="content has-header custom-side-icons">
+                <div class="content has-header ">
                         <div class="list">
+                            <li class="item item-toggle">
+                                Casual
+                                <label class="toggle toggle-assertive">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
 
-                            <label class="item item-input item-select">
-                                <div class="input-label">
-                                    Category
-                                </div>
-                                <select class="">
-                                    <option>Fast Food</option>
-                                    <option selected>Fast Casual</option>
-                                    <option>Casual Dining</option>
-                                    <option>Fine Dining</option>
-                                </select>
-                            </label>
+                            <li class="item item-toggle">
+                                Fine Dining
+                                <label class="toggle toggle-calm">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <li class="item item-toggle">
+                                Fast Food
+                                <label class="toggle toggle-royal">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <li class="item item-toggle">
+                                Special
+                                <label class="toggle toggle-positive">
+                                    <input type="checkbox">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
 
                             <div class="item range range-positive">
                                 <i class="icon ion-social-usd-outline"></i>
@@ -41,7 +68,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="bar bar-footer custom-side-icons">
+                <div class="bar bar-footer">
                     <div class="title branding" data-ion-menu-close>
                         {{> ionIcon icon="ios-arrow-left" }} Close
                     </div>
