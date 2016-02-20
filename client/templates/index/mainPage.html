@@ -1,4 +1,4 @@
-<template name="index">
+<template name="home">
   {{#ionView class="front-page"}}
     {{#ionHeaderBar class="bar-clear"}}
       <span class="title branding">Kamport</span>
@@ -8,8 +8,10 @@
     {{/ionHeaderBar}}
 
     {{#ionContent class="content"}}
-      <span>I feel like eating...</span>
-      <button class="button button-clear">Wherever</button>
+      <div id="main-page-content">
+        <span>I feel like eating...</span>
+        <button id="generate" class="button button-clear">Wherever</button>
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>
