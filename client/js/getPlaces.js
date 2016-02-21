@@ -49,7 +49,7 @@ if (Meteor.isClient) {
 
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    var rnd = Math.floor(Math.random() * results.length);
+                    var rnd = Math.floor(Math.random() * (results.length - 1));
                     Session.set("places", results[rnd]);
                     createMarker(results[rnd]);
                     m.panTo(marker.getPosition());
