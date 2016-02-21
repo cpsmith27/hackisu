@@ -38,6 +38,8 @@ if (Meteor.isClient) {
             var givenMoney = parseInt(Session.get('ion-social-usd')) + 1;
             var givenRate = parseInt(Session.get('ion-ios-star')) + 1;
             var type = Session.get('Casual');
+
+
             console.log(givenRadius);
             console.log(givenMoney);
             console.log(givenRate);
@@ -45,16 +47,24 @@ if (Meteor.isClient) {
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
+                name: 'pizza',
                 radius: givenRadius,
                 types: ['restaurant']
             }, callback);
 
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    Session.set("places",  JSON.stringify(results));
+                    Session.set("places",  results);
                 }
             }
 
+            function getNames(results){
+                var names = [];
+                for(i = 0; i < results.length; i++){
+                    names.push(results[i].name);
+                }
+                return names;
+            }
         });
     });
 }
