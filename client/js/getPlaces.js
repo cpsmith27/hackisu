@@ -3,46 +3,18 @@ var MAP_ZOOM = 15;
 Meteor.startup(function() {
     GoogleMaps.load({key: 'AIzaSyALQD2Ax84rd5q_MYLZ-AbWpE17F8fE0-E', libraries: 'places' });
     Geolocation.currentLocation();
-});
 
-Template.body.onRendered(function() {
-    GoogleMaps.ready('map', function(map) {
-        var userLocation = Geolocation.latLng();
-        var m = new google.maps.Map(this.$('#gmap')[0], {
-            center: userLocation,
-            zoom: 15
-        });
-
-        var service = new google.maps.places.PlacesService(m).nearbySearch({
-            location: userLocation,
-            radius: 5000,
-            types: ['restaurant']
-        }, callback);
-
-        function callback(results, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                Session.set("places",  JSON.stringify(results));
-            }
-        }
-
-        function getPlaces(results){
-            var names = [];
-            for(i = 0; i < results.length; i++){
-                names.push(results[i].name);
-            }
-
-            return names;
-        }
-    });
 });
 
 Template.map.onRendered = function() {
-        GoogleMaps.ready('map', function(map) {
+    GoogleMaps.ready('map', function(map) {
             var userLocation = Geolocation.latLng();
-            var m = new google.maps.Map(document.getElementById('gmap'), {
+            var m = new google.maps.Map(this.$('#gmap')[0], {
                 center: userLocation,
                 zoom: 15
             });
+
+            console.log(userLocation);
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
@@ -52,7 +24,7 @@ Template.map.onRendered = function() {
 
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    $('div.resNames').innerHTML = JSON.stringify(getPlaces(results));
+                    Session.set("places",  JSON.stringify(getPlaces(results)));
                 }
             }
 
@@ -82,8 +54,9 @@ Template.map.helpers({
             };
         }
     },
-
-
+    getNames: function(){
+        return Session.get("places");
+    }
 });
 
 Template.map.onCreated(function() {
@@ -93,6 +66,45 @@ Template.map.onCreated(function() {
             position: new google.maps.LatLng(userLocation.lat, userLocation.lng),
             map: map.instance
         });
+
+        var userLocation = Geolocation.latLng();
+        var m = new google.maps.Map(this.$('#gmap')[0], {
+            center: userLocation,
+            zoom: 15
+        });
+
+        console.log(userLocation);
+
+        var service = new google.maps.places.PlacesService(m).nearbySearch({
+            location: userLocation,
+            radius: 5000,
+            types: ['restaurant']
+        }, callback);
+
+        function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                Session.set("places",  EJSON.toJSONValue(getPlaces(results)));
+            }
+        }
+
+        function getPlaces(results){
+            var names = [];
+            for(i = 0; i < results.length; i++){
+                names.push(results[i].name);
+            }
+
+            return names;
+        }
     });
 });
 
+GoogleMaps.ready('map', function(map) {
+    var userLocation = Geolocation.latLng();
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(userLocation.lat, userLocation.lng),
+        map: map.instance
+    });
+
+    var userLocation = Geolocation.latLng();
+    var m = new google.maps.Map(this.$('#gmap')[0], {
+        center: userLocation,
