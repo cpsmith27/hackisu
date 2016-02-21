@@ -46,4 +46,8 @@ Template.categories.helpers({
     }
 });
 
-
+Template.restaurant.helpers({
+    RestaurantName: function(){
+        return Session.get("places").name;
+    }
+})
