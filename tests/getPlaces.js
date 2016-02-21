@@ -28,17 +28,19 @@ if (Meteor.isClient) {
         }
     });
 
-    Template.map.onRendered(function() {
+    Template.map.onCreated(function() {
+
         GoogleMaps.ready('map', function(map) {
             var userLocation = Geolocation.latLng();
-            var m = new google.maps.Map(this.$('#gmap')[0], {
-                center: userLocation,
-                zoom: 15
+            var marker = new google.maps.Marker({
+                position: map.options.center,
+                map: map.instance
             });
-            console.log(this.$('#gmap')[0]);
 
+            var service = new google.maps.places.PlacesService(map);
+            console.log(service);
 
-            var service = new google.maps.places.PlacesService(m).nearbySearch({
+            service.nearbySearch({
                 location: userLocation,
                 radius: 5000,
                 types: ['restaurant']
@@ -46,8 +48,18 @@ if (Meteor.isClient) {
 
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    Session.set("places",  JSON.stringify(results));
+                    for (var i = 0; i < results.length; i++) {
+                        createMarker(results[i]);
+                    }
                 }
+            }
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(placeLoc.lat, placeLoc.lng),
+                    map: map.instance
+                });
             }
 
         });
