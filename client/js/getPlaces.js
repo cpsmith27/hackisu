@@ -46,16 +46,20 @@ if (Meteor.isClient) {
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
-
+                radius: 5000,
+                name: types,
+                openNow: true,
                 maxPriceLevel: givenMoney,
-                radius: givenRadius,
                 types: ['restaurant']
             }, callback);
 
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    Session.set("places",  results);
+                    var rnd = Math.floor(Math.random() * results.length);
+                    Session.set("places",  results[rnd]);
                 }
+
+                console.log(Session.get("places"));
             }
 
             function getNames(results){
@@ -74,6 +78,4 @@ if (Meteor.isServer) {
         // code to run on server at startup
 
     });
-
-
 }
