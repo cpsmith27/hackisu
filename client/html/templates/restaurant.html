@@ -1,35 +1,20 @@
 <template name="restaurant">
+    <div id="restaurant-result">
+        <div class="list card">
+            <div class="title">
+                <h1>Go here.</h1>
+            </div>
 
-    {{#ionView  class="restaurant"}}
-    <div class="list card">
-
-        <div class="item item-avatar">
-            <img src="http://www.petzoned.com/assets/default_avatar-468e8f42276a2fd234b034f28536570b.png">
-            <h2>Pretty Hate Machine</h2>
-            <p>Nine Inch Nails</p>
+            <div class="img">
+                <img src="/img/restaurant.jpg" />
+            </div>
+            <div class="presentation">
+                <div id="gmap">
+                    {{> map }}
+                </div>
+                <div class="name">
+                </div>
+            </div>
         </div>
-
-        <!--<div  id="gmap">-->
-            <!--{{ > map }}-->
-        <!--</div>-->
-
-
-        <!--<button id="radius">500</button>-->
-
-    <div id="map">
-        <div id="gmap" style="height: 150px; width: 20%"> {{> map }} </div>
-
-        <div class="resNames" >
-            {{getNames}}
-        </div>
-        <button id="radius" style="position:relative">500</button>
-        <a class="item item-icon-left assertive" href="#">
-            <i class="icon ion-music-note"></i>
-            Start listening
-        </a>
     </div>
-    </div>
-
-    {{/ionView}}
-
 </template>
