@@ -53,6 +53,7 @@ if (Meteor.isClient) {
                     Session.set("places", results[rnd]);
                     createMarker(results[rnd]);
                     m.panTo(marker.getPosition());
+                    console.log(results[rnd]);
                 }
             }
 
