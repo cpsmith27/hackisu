@@ -4,24 +4,22 @@
 Template.categories.events({
     "change .item-toggle": function(e){
         Session.set(e.target.id, e.target.checked);
-        console.log(e.target.checked);
-
     },
     "change .range": function(e){
         Session.set(e.target.id, e.target.value);
-        console.log(e.target.value);
-
     }
 });
 
 Template.categories.onRendered(function(){
     var toggle = this.findAll('.item-toggle input');
     var range = this.findAll('.range input');
-
+    var array = [];
     toggle.forEach(function(data){
-        Session.set(data.id, data.checked);
-        console.log(data.checked);
+        if(data.checked == true)
+            array.push(data.id);
     });
+
+    Session.set("types", array);
 
     range.forEach(function(data){
         Session.set(data.id, data.value);
