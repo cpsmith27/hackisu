@@ -33,7 +33,7 @@ if (Meteor.isClient) {
                 zoom: 15
             });
 
-            var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 500;
+            var givenRadius = (parseInt(Session.get('ion-ios-navigate')) + 1) * 1000;
             var givenMoney = parseInt(Session.get('ion-social-usd')) + 1;
             var givenRate = parseInt(Session.get('ion-ios-star')) + 1;
             var types = Session.get('types');
@@ -41,7 +41,7 @@ if (Meteor.isClient) {
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
                 name: types,
-                radius: 5000,
+                radius: givenRadius,
                 openNow: true,
                 maxPriceLevel: givenMoney,
                 types: ['restaurant']
