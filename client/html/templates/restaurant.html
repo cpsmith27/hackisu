@@ -9,19 +9,25 @@
             <p>Nine Inch Nails</p>
         </div>
 
-        <div class="item item-image" id="gmap">
-            {{ > map }}
-        </div>
+        <!--<div  id="gmap">-->
+            <!--{{ > map }}-->
+        <!--</div>-->
 
-        <div class="resNames">
+
+        <!--<button id="radius">500</button>-->
+
+    <div id="map">
+        <div id="gmap" style="height: 150px; width: 20%"> {{> map }} </div>
+
+        <div class="resNames" >
             {{getNames}}
         </div>
-        <button id="radius">500</button>
-
+        <button id="radius" style="position:relative">500</button>
         <a class="item item-icon-left assertive" href="#">
             <i class="icon ion-music-note"></i>
             Start listening
         </a>
+    </div>
     </div>
 
     {{/ionView}}

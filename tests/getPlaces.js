@@ -6,6 +6,7 @@ if (Meteor.isClient) {
 
     Meteor.startup(function() {
         GoogleMaps.load({key: 'AIzaSyALQD2Ax84rd5q_MYLZ-AbWpE17F8fE0-E', libraries: 'places' });
+        Geolocation.currentLocation();
     });
 
 
