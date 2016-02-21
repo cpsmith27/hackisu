@@ -17,7 +17,7 @@ Template.home.onRendered(function() {
         content.empty();
         loadingView = Blaze.render(Template.generating, content[0]);
 
-        setTimeout(function() {loadContent(content);}, 1000);
+        setTimeout(function() {loadContent(content);}, 4000);
     });
 });
 
@@ -31,13 +31,13 @@ Template.generating.onRendered(function() {
         a.innerHTML = words[getRandomInt(0, words.length - 1)];
         setTimeout(function() {
             a.style.opacity = '1';
-        }, 425);
+        }, 400);
         setTimeout(function() {
             changeWord(a);
         }, getRandomInt(500, 800));
     }
 
-    var words = ["LOADING", "MOTHER", "FRIENDS", "HUNT", "INSANITY", "DAD", "LOSE", "BROTHER", "WAKE", "GIRLFRIEND", "TATAU", "MAN", "HOME"];
+    var words = ["很好吃", "Bonjour", "Résto", "Mother", "饭馆儿", "Papa", "Victoire", "Délice", "好久不见", "Sedapnya", "Makanan", "Goodbye", "Food"];
 
     var randoms = this.$(".randoms");
     for (i = 0; i < randoms.length; i++)
@@ -52,7 +52,7 @@ Template.restaurant.onRendered(function() {
         console.log(content);
         content.empty();
         loadingView = Blaze.render(Template.generating, content[0]);
-        setTimeout(function() {loadContent(content);}, 1000);
+        setTimeout(function() {loadContent(content);}, 3000);
     });
 });
 
