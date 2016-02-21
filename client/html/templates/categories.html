@@ -1,9 +1,9 @@
 <template name="categories">
     {{#each toggleSelect}}
     <li class="item item-toggle">
-        {{this}}
-        <label class="toggle toggle-assertive">
-            <input type="checkbox" id = "{{this}}">
+        {{name}}
+        <label class="toggle toggle-{{color}}">
+            <input type="checkbox" id = "{{name}}">
             <div class="track">
                 <div class="handle"></div>
             </div>
@@ -12,10 +12,10 @@
     {{/each}}
 
     {{#each rangeSelect}}
-    <div class="item range range-positive">
-        <i class="icon {{this}}-outline"></i>
-        <input type="range" name="volume" min="0" max="3" value="1" id="{{this}}">
-        <i class="icon {{this}}"></i>
+    <div class="item range range-{{color}}">
+        <i class="icon {{name}}-outline"></i>
+        <input type="range" name="volume" min="0" max="3" value="1" id="{{name}}">
+        <i class="icon {{name}}"></i>
     </div>
     {{/each}}
 </template>

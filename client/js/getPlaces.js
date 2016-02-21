@@ -9,8 +9,6 @@ if (Meteor.isClient) {
         Geolocation.currentLocation();
     });
 
-
-
     Template.map.helpers({
         geolocationError: function() {
             var error = Geolocation.error();
@@ -35,21 +33,38 @@ if (Meteor.isClient) {
                 center: userLocation,
                 zoom: 15
             });
-            console.log(this.$('#gmap')[0]);
 
+            var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 300;
+            var givenMoney = parseInt(Session.get('ion-social-usd')) + 1;
+            var givenRate = parseInt(Session.get('ion-ios-star')) + 1;
+            var types = Session.get('types');
+
+            console.log(givenRadius);
+            console.log(givenMoney);
+            console.log(givenRate);
+            console.log(types);
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
-                radius: 5000,
+
+                maxPriceLevel: givenMoney,
+                radius: givenRadius,
                 types: ['restaurant']
             }, callback);
 
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    Session.set("places",  JSON.stringify(results));
+                    Session.set("places",  results);
                 }
             }
 
+            function getNames(results){
+                var names = [];
+                for(i = 0; i < results.length; i++){
+                    names.push(results[i].name);
+                }
+                return names;
+            }
         });
     });
 }
