@@ -13,10 +13,13 @@ Template.categories.events({
 Template.categories.onRendered(function(){
     var toggle = this.findAll('.item-toggle input');
     var range = this.findAll('.range input');
-
+    var array = [];
     toggle.forEach(function(data){
-        Session.set(data.id, data.checked);
+        if(data.checked == true)
+            array.push(data.id);
     });
+
+    Session.set("types", array);
 
     range.forEach(function(data){
         Session.set(data.id, data.value);
