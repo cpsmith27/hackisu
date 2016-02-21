@@ -9,8 +9,6 @@ if (Meteor.isClient) {
         Geolocation.currentLocation();
     });
 
-
-
     Template.map.helpers({
         geolocationError: function() {
             var error = Geolocation.error();
@@ -35,12 +33,13 @@ if (Meteor.isClient) {
                 center: userLocation,
                 zoom: 15
             });
-            console.log(this.$('#gmap')[0]);
 
+            var givenRadius = Session.get('ion-ios-navigate') * 300;
+            console.log(givenRadius);
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
-                radius: 5000,
+                radius: givenRadius,
                 types: ['restaurant']
             }, callback);
 
