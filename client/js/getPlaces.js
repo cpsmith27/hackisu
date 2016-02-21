@@ -44,7 +44,7 @@ if (Meteor.isClient) {
                 radius: givenRadius,
                 openNow: true,
                 maxPriceLevel: givenMoney,
-                types: ['restaurant']
+                types: ['food']
             }, callback);
 
             function callback(results, status) {
@@ -63,15 +63,6 @@ if (Meteor.isClient) {
                     position: place.geometry.location
                 });
             }
-
-            function getNames(results){
-                var names = [];
-                for(i = 0; i < results.length; i++){
-                    names.push(results[i].name);
-                }
-                return names;
-            }
-
         });
     });
 }
