@@ -5,7 +5,7 @@ Template.categories.events({
     "toggle .item-toggle": function(e){
         Session.set(e.target.id, e.target.value);
     },
-    "toggle .range": function(e){
+    "change .range": function(e){
         Session.set(e.target.id, e.target.value);
     }
 });

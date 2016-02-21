@@ -34,8 +34,14 @@ if (Meteor.isClient) {
                 zoom: 15
             });
 
-            var givenRadius = Session.get('ion-ios-navigate') * 300;
+            var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 300;
+            var givenMoney = parseInt(Session.get('ion-social-usd')) + 1;
+            var givenRate = parseInt(Session.get('ion-ios-star')) + 1;
+            var type = Session.get('Casual');
             console.log(givenRadius);
+            console.log(givenMoney);
+            console.log(givenRate);
+            console.log(type);
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
