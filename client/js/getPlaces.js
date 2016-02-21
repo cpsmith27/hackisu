@@ -1,9 +1,8 @@
 Markers = new Mongo.Collection('markers');
 
-
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;
-
+    var marker;
     Meteor.startup(function() {
         GoogleMaps.load({key: 'AIzaSyALQD2Ax84rd5q_MYLZ-AbWpE17F8fE0-E', libraries: 'places' });
         Geolocation.currentLocation();
@@ -34,15 +33,10 @@ if (Meteor.isClient) {
                 zoom: 15
             });
 
-            var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 300;
+            var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 500;
             var givenMoney = parseInt(Session.get('ion-social-usd')) + 1;
             var givenRate = parseInt(Session.get('ion-ios-star')) + 1;
             var types = Session.get('types');
-
-            console.log(givenRadius);
-            console.log(givenMoney);
-            console.log(givenRate);
-            console.log(types);
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
@@ -58,15 +52,12 @@ if (Meteor.isClient) {
                     var rnd = Math.floor(Math.random() * results.length);
                     Session.set("places", results[rnd]);
                     createMarker(results[rnd]);
+                    m.panTo(marker.getPosition());
                 }
-
-                console.log(Session.get("places"));
             }
 
             function createMarker(place) {
-                var placeLoc = place.geometry.location;
-                console.log(placeLoc);
-                var marker = new google.maps.Marker({
+                marker = new google.maps.Marker({
                     map: m,
                     position: place.geometry.location
                 });
