@@ -26,10 +26,10 @@ Template.categories.onRendered(function(){
 
 Template.categories.helpers({
     toggleSelect: function () {
-        return [{name:"Fast Food", color:"assertive"}, {name:"Casual", color:"energized"}, {name:"Fine Dining", color:"balanced"}, {name:"Special", color:"positive"}]
+        return [{name:"Fast Food", color:"assertive"}, {name:"Casual", color:"energized"}, {name:"Fine Dining", color:"balanced"}, {name:"Special", color:"calm"}]
     },
     rangeSelect: function (){
-        return ["ion-social-usd", "ion-ios-navigate", "ion-ios-star"]
+        return [{name:"ion-social-usd",color:"calm"}, {name:"ion-ios-navigate",color:"balanced"}, {name:"ion-ios-star", color:"assertive"} ]
     }
 });
 
