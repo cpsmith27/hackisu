@@ -71,6 +71,25 @@ if (Meteor.isClient) {
             }
         });
     });
+
+    Template.home.onRendered(function() {
+        var genButton = this.$('#generate');
+        var content = this.$('#main-page-content');
+
+        genButton.click(function () {
+            console.log(content);
+            content.empty();
+            loadingView = Blaze.render(Template.generating, content[0]);
+
+            setTimeout(function() {
+                $(".randoms").each(function(e){
+                    Blaze.remove(loadingView);
+                });
+
+                Blaze.render(Template.restaurant, content[0]);
+            }, 1000);
+        });
+    });
 }
 
 if (Meteor.isServer) {
