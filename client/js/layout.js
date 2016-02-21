@@ -39,7 +39,7 @@ Template.categories.onRendered(function(){
 
 Template.categories.helpers({
     toggleSelect: function () {
-        return [{name:"Fast Food", color:"assertive"}, {name:"Casual", color:"energized"}, {name:"Fine Dining", color:"balanced"}, {name:"Special", color:"calm"}]
+        return [{name:"Pizza", color:"assertive"}, {name:"Bread", color:"energized"}, {name:"Buffet", color:"balanced"}, {name:"Korean", color:"calm"}]
     },
     rangeSelect: function (){
         return [{name:"ion-social-usd",color:"calm"}, {name:"ion-ios-navigate",color:"balanced"}, {name:"ion-ios-star", color:"assertive"} ]
