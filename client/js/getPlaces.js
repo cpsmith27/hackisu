@@ -29,9 +29,9 @@ if (Meteor.isClient) {
     Template.map.onRendered(function() {
         GoogleMaps.ready('map', function(map) {
             var userLocation = Geolocation.latLng();
-            var m = new google.maps.Map(this.$('#gmap')[0], {
-                center: userLocation,
-                zoom: 15
+            var marker = new google.maps.Marker({
+                position: map.options.center,
+                map: map.instance
             });
 
             var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 300;
