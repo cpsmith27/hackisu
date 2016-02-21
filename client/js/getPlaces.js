@@ -29,9 +29,9 @@ if (Meteor.isClient) {
     Template.map.onRendered(function() {
         GoogleMaps.ready('map', function(map) {
             var userLocation = Geolocation.latLng();
-            var marker = new google.maps.Marker({
-                position: map.options.center,
-                map: map.instance
+            var m = new google.maps.Map(this.$('#gmap')[0], {
+                center: userLocation,
+                zoom: 15
             });
 
             var givenRadius = parseInt(Session.get('ion-ios-navigate')) * 300;
@@ -46,8 +46,8 @@ if (Meteor.isClient) {
 
             var service = new google.maps.places.PlacesService(m).nearbySearch({
                 location: userLocation,
-                radius: 5000,
                 name: types,
+                radius: 5000,
                 openNow: true,
                 maxPriceLevel: givenMoney,
                 types: ['restaurant']
@@ -56,10 +56,20 @@ if (Meteor.isClient) {
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     var rnd = Math.floor(Math.random() * results.length);
-                    Session.set("places",  results[rnd]);
+                    Session.set("places", results[rnd]);
+                    createMarker(results[rnd]);
                 }
 
                 console.log(Session.get("places"));
+            }
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                console.log(placeLoc);
+                var marker = new google.maps.Marker({
+                    map: m,
+                    position: place.geometry.location
+                });
             }
 
             function getNames(results){
@@ -69,25 +79,7 @@ if (Meteor.isClient) {
                 }
                 return names;
             }
-        });
-    });
 
-    Template.home.onRendered(function() {
-        var genButton = this.$('#generate');
-        var content = this.$('#main-page-content');
-
-        genButton.click(function () {
-            console.log(content);
-            content.empty();
-            loadingView = Blaze.render(Template.generating, content[0]);
-
-            setTimeout(function() {
-                $(".randoms").each(function(e){
-                    Blaze.remove(loadingView);
-                });
-
-                Blaze.render(Template.restaurant, content[0]);
-            }, 1000);
         });
     });
 }
