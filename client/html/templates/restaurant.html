@@ -1,20 +1,22 @@
-<template name="restaurant">
-    <div id="restaurant-result">
-        <div class="list card">
-            <div class="title">
-                <h1>Go here.</h1>
-            </div>
 
-            <div class="img">
-                <img src="/img/restaurant.jpg" />
+<template name="restaurant">
+    {{#ionView class="restaurant-view" }}
+    <div class="restaurant-result">
+    <div class="list card">
+        <div class="item ">
+            <h2 class="header branding">Go Here</h2>
+        </div>
+        <div class="item item-body">
+            <div id="gmap" class="full-image">
+                {{> map }}
             </div>
-            <div class="presentation">
-                <div id="gmap">
-                    {{> map }}
-                </div>
-                <div class="name">
-                </div>
-            </div>
+            <p>
+                <a href="#" class="subdued">1 Like</a>
+                <a href="#" class="subdued">5 Comments</a>
+            </p>
         </div>
     </div>
+        </div>
+    {{/ionView}}
 </template>
+
