@@ -10,6 +10,10 @@ Template.categories.events({
     }
 });
 
+Template.categories.onRendered(){
+    Session.set(this.find('.item-toggle'), "1");
+});
+
 Template.categories.helpers({
     toggleSelect: function () {
         return ["Fast Food", "Casual", "Fine Dining", "Special"]
