@@ -2,11 +2,15 @@
  * Created by leyang on 2/20/16.
  */
 Template.categories.events({
-    "toggle .item-toggle": function(e){
-        Session.set(e.target.id, e.target.value);
+    "change .item-toggle": function(e){
+        Session.set(e.target.id, e.target.checked);
+        console.log(e.target.checked);
+
     },
     "change .range": function(e){
         Session.set(e.target.id, e.target.value);
+        console.log(e.target.value);
+
     }
 });
 
@@ -15,7 +19,8 @@ Template.categories.onRendered(function(){
     var range = this.findAll('.range input');
 
     toggle.forEach(function(data){
-        Session.set(data.id, data.value);
+        Session.set(data.id, data.checked);
+        console.log(data.checked);
     });
 
     range.forEach(function(data){
