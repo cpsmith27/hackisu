@@ -44,7 +44,7 @@ if (Meteor.isClient) {
                 radius: givenRadius,
                 openNow: true,
                 maxPriceLevel: givenMoney,
-                types: ['food']
+                types: ['restaurant']
             }, callback);
 
             function callback(results, status) {
