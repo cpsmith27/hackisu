@@ -1,5 +1,13 @@
 var loadingView;
 
+loadContent = function(content) {
+    $(".randoms").each(function(e){
+        Blaze.remove(loadingView);
+    });
+
+    Blaze.render(Template.restaurant, content[0]);
+}
+
 Template.home.onRendered(function() {
     var genButton = this.$('#generate');
     var content = this.$('#main-page-content');
@@ -9,13 +17,7 @@ Template.home.onRendered(function() {
         content.empty();
         loadingView = Blaze.render(Template.generating, content[0]);
 
-        setTimeout(function() {
-            $(".randoms").each(function(e){
-                Blaze.remove(loadingView);
-            });
-
-            Blaze.render(Template.restaurant, content[0]);
-        }, 1000);
+        setTimeout(function() {loadContent(content);}, 1000);
     });
 });
 
@@ -40,6 +42,18 @@ Template.generating.onRendered(function() {
     var randoms = this.$(".randoms");
     for (i = 0; i < randoms.length; i++)
         changeWord(randoms[i]);
+});
+
+Template.restaurant.onRendered(function() {
+    var genButton = this.$('#generate');
+    var content = $('#main-page-content');
+
+    genButton.click(function () {
+        console.log(content);
+        content.empty();
+        loadingView = Blaze.render(Template.generating, content[0]);
+        setTimeout(function() {loadContent(content);}, 1000);
+    });
 });
 
 Template.restaurant.helpers({
