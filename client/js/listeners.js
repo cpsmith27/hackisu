@@ -55,15 +55,3 @@ Template.restaurant.onRendered(function() {
         setTimeout(function() {loadContent(content);}, 3000);
     });
 });
-
-Template.restaurant.helpers({
-    name: function(){
-        return Session.get("places");
-    },
-    address: function(){
-        return Session.get("places").vicinity;
-    },
-    rating: function(){
-        return Session.get("places").rating;
-    }
-});
