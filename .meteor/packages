@@ -23,11 +23,11 @@ dburles:google-maps
 
 iron:router
 fourseven:scss
-meteoric:ionic-sass
-meteoric:ionicons-sass
 meteoric:ionic
 jeremy:geocomplete
 mdg:geolocation
 ejson
 barbatus:stars-rating
 dandv:jquery-rateit
+meteoric:ionicons-sass
+meteoric:ionic-sass
