@@ -1,0 +1,250 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.7.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'fibers' ]
+2 info using npm@3.6.0
+3 info using node@v5.7.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData fibers@1.0.5
+8 silly fetchNamedPackageData fibers
+9 silly mapToRegistry name fibers
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/fibers
+13 verbose request uri https://registry.npmjs.org/fibers
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 11:42:26 AM
+16 verbose request id cef5823e939b4ea1
+17 http request GET https://registry.npmjs.org/fibers
+18 http 200 https://registry.npmjs.org/fibers
+19 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+19 verbose headers   etag: '"8UMK1NKSM6VZ8PFIPHTEIYNN"',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'cache-control': 'max-age=300',
+19 verbose headers   'content-length': '58148',
+19 verbose headers   'accept-ranges': 'bytes',
+19 verbose headers   date: 'Thu, 24 Mar 2016 16:42:27 GMT',
+19 verbose headers   via: '1.1 varnish',
+19 verbose headers   age: '114',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-served-by': 'cache-dfw1835-DFW',
+19 verbose headers   'x-cache': 'HIT',
+19 verbose headers   'x-cache-hits': '2',
+19 verbose headers   'x-timer': 'S1458837747.329910,VS0,VE0',
+19 verbose headers   vary: 'Accept' }
+20 silly get cb [ 200,
+20 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 silly get     etag: '"8UMK1NKSM6VZ8PFIPHTEIYNN"',
+20 silly get     'content-type': 'application/json',
+20 silly get     'cache-control': 'max-age=300',
+20 silly get     'content-length': '58148',
+20 silly get     'accept-ranges': 'bytes',
+20 silly get     date: 'Thu, 24 Mar 2016 16:42:27 GMT',
+20 silly get     via: '1.1 varnish',
+20 silly get     age: '114',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-served-by': 'cache-dfw1835-DFW',
+20 silly get     'x-cache': 'HIT',
+20 silly get     'x-cache-hits': '2',
+20 silly get     'x-timer': 'S1458837747.329910,VS0,VE0',
+20 silly get     vary: 'Accept' } ]
+21 verbose get saving fibers to /Users/chiajun/.npm/registry.npmjs.org/fibers/.cache.json
+22 verbose correctMkdir /Users/chiajun/.npm correctMkdir not in flight; initializing
+23 silly install normalizeTree
+24 silly loadCurrentTree Finishing
+25 silly loadIdealTree Starting
+26 silly install loadIdealTree
+27 silly cloneCurrentTree Starting
+28 silly install cloneCurrentTreeToIdealTree
+29 silly cloneCurrentTree Finishing
+30 silly loadShrinkwrap Starting
+31 silly install loadShrinkwrap
+32 silly loadShrinkwrap Finishing
+33 silly loadAllDepsIntoIdealTree Starting
+34 silly install loadAllDepsIntoIdealTree
+35 silly resolveWithNewModule fibers@1.0.5 checking installable status
+36 silly cache add args [ 'fibers@1.0.5', null ]
+37 verbose cache add spec fibers@1.0.5
+38 silly cache add parsed spec Result {
+38 silly cache add   raw: 'fibers@1.0.5',
+38 silly cache add   scope: null,
+38 silly cache add   name: 'fibers',
+38 silly cache add   rawSpec: '1.0.5',
+38 silly cache add   spec: '1.0.5',
+38 silly cache add   type: 'version' }
+39 silly addNamed fibers@1.0.5
+40 verbose addNamed "1.0.5" is a plain semver version for fibers
+41 silly mapToRegistry name fibers
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/fibers
+45 verbose addNameVersion registry:https://registry.npmjs.org/fibers not in flight; fetching
+46 verbose get https://registry.npmjs.org/fibers not expired, no request
+47 silly mapToRegistry name fibers
+48 silly mapToRegistry using default registry
+49 silly mapToRegistry registry https://registry.npmjs.org/
+50 silly mapToRegistry uri https://registry.npmjs.org/fibers
+51 verbose addRemoteTarball https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz not in flight; adding
+52 verbose addRemoteTarball [ 'https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz',
+52 verbose addRemoteTarball   '3bea1f697d8540bb3904961ad50939bdee1df678' ]
+53 info retry fetch attempt 1 at 11:42:27 AM
+54 info attempt registry request try #1 at 11:42:27 AM
+55 http fetch GET https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz
+56 http fetch 200 https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz
+57 silly fetchAndShaCheck shasum 3bea1f697d8540bb3904961ad50939bdee1df678
+58 verbose addTmpTarball /tmp/npm-18799-2963b712/registry.npmjs.org/fibers/-/fibers-1.0.5.tgz not in flight; adding
+59 verbose addTmpTarball already have metadata; skipping unpack for fibers@1.0.5
+60 verbose correctMkdir /Users/chiajun/.npm correctMkdir not in flight; initializing
+61 silly cache afterAdd fibers@1.0.5
+62 verbose afterAdd /Users/chiajun/.npm/fibers/1.0.5/package/package.json not in flight; writing
+63 verbose correctMkdir /Users/chiajun/.npm correctMkdir not in flight; initializing
+64 verbose afterAdd /Users/chiajun/.npm/fibers/1.0.5/package/package.json written
+65 silly loadAllDepsIntoIdealTree Finishing
+66 silly idealTree:prePrune meteor-dev-bundle@0.0.0
+66 silly idealTree:prePrune └── fibers@1.0.5
+67 silly loadIdealTree Finishing
+68 silly currentTree meteor-dev-bundle@0.0.0
+69 silly idealTree meteor-dev-bundle@0.0.0
+69 silly idealTree └── fibers@1.0.5
+70 silly generateActionsToTake Starting
+71 silly install generateActionsToTake
+72 silly generateActionsToTake Finishing
+73 silly diffTrees action count 1
+74 silly diffTrees add fibers@1.0.5
+75 silly decomposeActions action count 8
+76 silly decomposeActions fetch fibers@1.0.5
+77 silly decomposeActions extract fibers@1.0.5
+78 silly decomposeActions test fibers@1.0.5
+79 silly decomposeActions preinstall fibers@1.0.5
+80 silly decomposeActions build fibers@1.0.5
+81 silly decomposeActions install fibers@1.0.5
+82 silly decomposeActions postinstall fibers@1.0.5
+83 silly decomposeActions finalize fibers@1.0.5
+84 silly executeActions Starting
+85 silly install executeActions
+86 silly doSerial global-install 0
+87 silly doParallel fetch 1
+88 verbose correctMkdir /Users/chiajun/.npm/_locks correctMkdir not in flight; initializing
+89 verbose lock using /Users/chiajun/.npm/_locks/staging-f77c2499543a3dda.lock for /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging
+90 silly doParallel extract 1
+91 silly extract fibers@1.0.5
+92 verbose unbuild node_modules/.staging/fibers-acdf2dfe
+93 silly gentlyRm /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe is being purged from base /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server
+94 verbose gentlyRm don't care about contents; nuking /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe
+95 verbose tar unpack /Users/chiajun/.npm/fibers/1.0.5/package.tgz
+96 verbose tar unpacking to /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe
+97 silly gentlyRm /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe is being purged
+98 verbose gentlyRm don't care about contents; nuking /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe
+99 silly gunzTarPerm modes [ '755', '644' ]
+100 silly gunzTarPerm extractEntry package.json
+101 silly gunzTarPerm extractEntry .npmignore
+102 silly gunzTarPerm extractEntry README.md
+103 silly gunzTarPerm extractEntry LICENSE
+104 silly gunzTarPerm extractEntry quick-test.js
+105 silly gunzTarPerm extractEntry future.js
+106 silly gunzTarPerm extractEntry build.js
+107 silly gunzTarPerm extractEntry test.js
+108 silly gunzTarPerm extractEntry fibers.js
+109 silly gunzTarPerm extractEntry binding.gyp
+110 silly gunzTarPerm extractEntry bin/.npmignore
+111 silly gunzTarPerm extractEntry bin/darwin-ia32-v8-3.14/fibers.node
+112 silly gunzTarPerm extractEntry bin/darwin-x64-v8-3.14/fibers.node
+113 silly gunzTarPerm extractEntry bin/linux-ia32-v8-3.14/fibers.node
+114 silly gunzTarPerm extractEntry bin/linux-x64-v8-3.14/fibers.node
+115 silly gunzTarPerm extractEntry bin/win32-ia32-v8-3.14/fibers.node
+116 silly gunzTarPerm extractEntry bin/win32-x64-v8-3.14/fibers.node
+117 silly gunzTarPerm extractEntry src/coroutine.cc
+118 silly gunzTarPerm extractEntry src/coroutine.h
+119 silly gunzTarPerm extractEntry src/fibers.cc
+120 silly gunzTarPerm extractEntry src/libcoro/README
+121 silly gunzTarPerm extractEntry src/libcoro/LICENSE
+122 silly gunzTarPerm extractEntry src/libcoro/conftest.c
+123 silly gunzTarPerm extractEntry src/libcoro/coro.c
+124 silly gunzTarPerm extractEntry src/libcoro/coro.h
+125 silly gunzTarPerm extractEntry test/already-running.js
+126 silly gunzTarPerm extractEntry test/exit.js
+127 silly gunzTarPerm extractEntry test/fibonacci.js
+128 silly gunzTarPerm extractEntry test/finish-multiple.js
+129 silly gunzTarPerm extractEntry test/exec.js
+130 silly gunzTarPerm extractEntry test/future.js
+131 silly gunzTarPerm extractEntry test/illegal-yield.js
+132 silly gunzTarPerm extractEntry test/pool.js
+133 silly gunzTarPerm extractEntry test/process-title.js
+134 silly gunzTarPerm extractEntry test/stack-overflow.js
+135 silly gunzTarPerm extractEntry test/current.js
+136 silly gunzTarPerm extractEntry test/stack-overflow2.js
+137 silly gunzTarPerm extractEntry test/child-process.js
+138 silly gunzTarPerm extractEntry test/started.js
+139 silly gunzTarPerm extractEntry test/bad-context.js
+140 silly gunzTarPerm extractEntry test/unwind.js
+141 silly gunzTarPerm extractEntry test/future-exception.js
+142 silly gentlyRm /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe/node_modules is being purged
+143 verbose gentlyRm don't care about contents; nuking /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe/node_modules
+144 silly doParallel preinstall 1
+145 silly preinstall fibers@1.0.5 /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe
+146 info lifecycle fibers@1.0.5~preinstall: fibers@1.0.5
+147 silly lifecycle fibers@1.0.5~preinstall: no script for preinstall, continuing
+148 silly doReverseSerial remove 0
+149 silly doSerial move 0
+150 silly doSerial finalize 1
+151 silly finalize /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/fibers
+152 silly doSerial build 1
+153 silly build fibers@1.0.5
+154 info linkStuff fibers@1.0.5
+155 silly linkStuff fibers@1.0.5 has /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules as its parent node_modules
+156 verbose linkBins fibers@1.0.5
+157 verbose linkMans fibers@1.0.5
+158 silly doSerial global-link 0
+159 silly doParallel update-linked 0
+160 silly doSerial install 1
+161 silly install fibers@1.0.5 /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging/fibers-acdf2dfe
+162 info lifecycle fibers@1.0.5~install: fibers@1.0.5
+163 verbose lifecycle fibers@1.0.5~install: unsafe-perm in lifecycle false
+164 verbose lifecycle fibers@1.0.5~install: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/fibers/node_modules/.bin:/Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.bin:/usr/local/lib/dnx/runtimes/dnx-coreclr-darwin-x64.1.0.0-rc1-update1/bin:/Users/chiajun/.dnx/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+165 verbose lifecycle fibers@1.0.5~install: CWD: /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/fibers
+166 silly lifecycle fibers@1.0.5~install: Args: [ '-c', 'node ./build.js' ]
+167 silly lifecycle fibers@1.0.5~install: Returned: code: 1  signal: null
+168 info lifecycle fibers@1.0.5~install: Failed to exec install script
+169 verbose unlock done using /Users/chiajun/.npm/_locks/staging-f77c2499543a3dda.lock for /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server/node_modules/.staging
+170 silly rollbackFailedOptional Starting
+171 silly rollbackFailedOptional Finishing
+172 silly runTopLevelLifecycles Starting
+173 silly runTopLevelLifecycles Finishing
+174 silly install printInstalled
+175 warn meteor-dev-bundle@0.0.0 No description
+176 warn meteor-dev-bundle@0.0.0 No repository field.
+177 warn meteor-dev-bundle@0.0.0 No license field.
+178 verbose stack Error: fibers@1.0.5 install: `node ./build.js`
+178 verbose stack Exit status 1
+178 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
+178 verbose stack     at emitTwo (events.js:100:13)
+178 verbose stack     at EventEmitter.emit (events.js:185:7)
+178 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+178 verbose stack     at emitTwo (events.js:100:13)
+178 verbose stack     at ChildProcess.emit (events.js:185:7)
+178 verbose stack     at maybeClose (internal/child_process.js:827:16)
+178 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+179 verbose pkgid fibers@1.0.5
+180 verbose cwd /Users/chiajun/Dropbox/ISU/HackISU/hackisu/bundle/programs/server
+181 error Darwin 15.4.0
+182 error argv "/usr/local/Cellar/node/5.7.0/bin/node" "/usr/local/bin/npm" "install" "fibers"
+183 error node v5.7.0
+184 error npm  v3.6.0
+185 error code ELIFECYCLE
+186 error fibers@1.0.5 install: `node ./build.js`
+186 error Exit status 1
+187 error Failed at the fibers@1.0.5 install script 'node ./build.js'.
+187 error Make sure you have the latest version of node.js and npm installed.
+187 error If you do, this is most likely a problem with the fibers package,
+187 error not with npm itself.
+187 error Tell the author that this fails on your system:
+187 error     node ./build.js
+187 error You can get information on how to open an issue for this project with:
+187 error     npm bugs fibers
+187 error Or if that isn't available, you can get their info via:
+187 error     npm owner ls fibers
+187 error There is likely additional logging output above.
+188 verbose exit [ 1, true ]
